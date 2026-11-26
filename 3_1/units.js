@@ -6,6 +6,8 @@ const weight_bg = 15.244
 const kilogram = 1000
 // 0.965(96.5%)
 const bg_purity_percent = 0.965
+// kilogram/weight_bg
+const kilotobg = 65.6
 
 
 // 65.6 บาททองต่อ 1 โล (1000/15.244)
@@ -34,7 +36,7 @@ function kgToBg(kg){
         throw new Error("Kg is not a number")
     }
 
-    return Number(kg * 65.6 / bg_purity_percent).toFixed(4) //เกิดทศนิยมขึ้นที่นี้ เนื่องจากมีการตัดทศนิยมเหลือ 4 ตัว หรือปัดทศนิยม ​1000/15.244 (65.59958016)
+    return Number(kg * kilotobg / bg_purity_percent).toFixed(4)
 }
 
 console.log("Begin\n"
