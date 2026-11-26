@@ -1,5 +1,3 @@
-const number = 1
-
 // น้ำหนักกรัมบาททอง
 const weight_bg = 15.244
 // 1000 กรัม
@@ -14,7 +12,7 @@ const kilotobg = 65.6
 // 15.244 กรัม ต้อ 1 บาททอง
 
 function bahtToGram(baht){
-    if(baht === Number.isFinite()){
+    if(isNaN(baht)){
         throw new Error("Baht is not a number")
     }
 
@@ -23,7 +21,7 @@ function bahtToGram(baht){
 
 // บาทกรัม เป็น กิโลกรัม
 function bgToKg(bg){
-    if(bg === Number.isFinite()){
+    if(isNaN(bg)){
         throw new Error("Bg is not a number")
     }
 
