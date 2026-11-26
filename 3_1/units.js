@@ -1,0 +1,50 @@
+const number = 1
+
+// น้ำหนักกรัมบาททอง
+const weight_bg = 15.244
+// 1000 กรัม
+const kilogram = 1000
+// 0.965(96.5%)
+const bg_purity_percent = 0.965
+// 1000/15.244
+
+
+// 65.6 บาททองต่อ 1 โล (1000/15.244)
+// 15.244 กรัม ต้อ 1 บาททอง
+
+function bahtToGram(baht){
+    if(baht === Number.isFinite()){
+        throw new Error("Baht is not a number")
+    }
+
+    return Number(baht * weight_bg).toFixed(4)
+}
+
+// บาทกรัม เป็น กิโลกรัม
+function bgToKg(bg){
+    if(bg === Number.isFinite()){
+        throw new Error("Bg is not a number")
+    }
+
+    return Number(bg * weight_bg / kilogram * bg_purity_percent).toFixed(4)
+}
+
+// โล(99.99%) เป็น บาท(96.5%)
+function kgToBg(kg){
+    if(kg === Number.isFinite()){
+        throw new Error("Kg is not a number")
+    }
+
+    return Number(kg * (kilogram / weight_bg) / bg_purity_percent).toFixed(4)
+}
+
+console.log("Begin\n"
+            + "Baht To Gram: " + bahtToGram(1) + "\n" 
+            + "Baht To Gram: " + bahtToGram(2.5) + "\n"
+            + "BahtGram To Kilogram: " + bgToKg(1000) + "\n"
+            + "Kilogram To BahtGram: " + kgToBg(1) + "\n"
+            + "\n"
+            + "Kilogram To BahtGram(Bahtgram to kg): " + kgToBg(bgToKg(bahtToGram(1))) 
+            + "BahtToGram -> BahtToKilo -> KiloToBahtGram " + bahtToGram(bgToKg(kgToBg(1)))
+            + "\n"
+)
