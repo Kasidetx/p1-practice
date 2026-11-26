@@ -1,5 +1,3 @@
-const number = 1
-
 // น้ำหนักกรัมบาททอง
 const weight_bg = 15.244
 // 1000 กรัม
