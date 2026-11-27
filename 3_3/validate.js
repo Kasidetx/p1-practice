@@ -41,4 +41,10 @@ function validateBuy965(order, priceNow){
     return "ผ่าน"
 }
 
-console.log(validateBuy965(order[0], PriceNow))
+console.log(validateBuy965(order[0], 41250)) // ผ่าน
+console.log(validateBuy965(order[1], 41250)) // การทำรายการต้องใส่ปริมาณ ซื้อ/ขาย อย่างน้อย 1 บาททอง
+console.log(validateBuy965(order[2], 41250)) // ผ่าน
+console.log(validateBuy965(order[3], 41250)) // ปริมาณซื้อขายทองคำ 96 ไม่ถูกต้อง ซื้อขายได้ไม่เกินครั้งละ 2,000 บาททอง (Bg)
+console.log(validateBuy965(order[4], 41255)) // ผ่าน
+console.log(validateBuy965(order[5], 41256)) // ราคาซื้อขายมีการเปลี่ยนแปลง ราคาปัจจุบัน 41256, ส่วนต่างที่ยอมรับได้: 5
+console.log(validateBuy965(order[6], 9000)) // ราคาซื้อขายไม่ถูกต้อง กรุณาทำรายการใหม่
