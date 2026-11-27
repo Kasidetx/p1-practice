@@ -8,9 +8,7 @@ const order = [
     { price: 41250, qty: 5}    ,
 ]
 
-const PriceNow = 41250
-const BubblePrice = 5
-
+const BUBBLEPRICE = 5
 const MINQTY = 1
 const MAXQTY = 2000
 const MINPRICENOW = 10000
