@@ -32,8 +32,8 @@ function validateBuy965(order, priceNow){
     }
 
     //if((priceNow - order.price) > BubblePrice || (order.price - priceNow) > BubblePrice){
-    if(Math.abs(priceNow - order.price) >  BubblePrice){
-        return "ราคาซื้อขายมีการเปลี่ยนแปลง ราคาปัจจุบัน " + priceNow + ", ส่วนต่างที่ยอมรับได้: " + BubblePrice
+    if(Math.abs(priceNow - order.price) >  BUBBLEPRICE){
+        return "ราคาซื้อขายมีการเปลี่ยนแปลง ราคาปัจจุบัน " + priceNow + ", ส่วนต่างที่ยอมรับได้: " + BUBBLEPRICE
     }
 
     return "ผ่าน"
